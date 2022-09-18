@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap');
+
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+        "nav"
+        "content"
+        "sidebar"
+        "footer";
+}
+
+.content {
+    grid-area: content;
+}
+
+.main-nav {
+    grid-area: nav;
+    position: sticky;
+    top: 0;
+}
+
+.main-footer {
+    grid-area: footer;
+    position: sticky;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+
+    background-color: red;
+    color: white;
+
+    text-align: center;
+}
+
+.main-sidebar {
+    grid-area: sidebar;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar-title {
+    grid-area: sidebar-title;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sidebar-list li {
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.playlist .card-container {
+    display: flex;
+}
+
+.music-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+
+    background-color: #17141d;
+    border-radius: 10px;
+    box-shadow: -1rem 0 3rem #000;
+
+    color: white;
+
+    transition: 0.4s ease-out;
+
+    position: relative;
+    left: 0px;
+}
+
+.music-card:hover {
+    transform: translateY(-20px);
+    transition: 0.4s ease-out;
+}
+  
+.music-card:hover ~ .music-card {
+    position: relative;
+    left: 50px;
+    transition: 0.4s ease-out;
+}
+
+.music-card img {
+    height: 50%;
+    width: 100%;
+}
+
+.music-card audio {
+    width: 100%;
+    border-radius: 10px;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+}
+
+.music-card .description {
+    height: 50%;
+    width: 100%;
+}
+
+.music-card .description h6 {
+    margin: 0;
+    top: 0;
+}
+
+.music-card .description p {
+    display: inline-block;
+    margin: 0.2rem;
+}
+
+@media (min-width: 1025px) {
+    .wrapper {
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr 4fr 4fr 0.6fr;
+        grid-template-areas:
+        "sidebar nav"
+        "sidebar content"
+        "sidebar content"
+        "footer  footer"
+    }
+    .main-nav ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .main-nav ul li {
+        margin-right: 2rem;
+    }
+
+    .music-card {
+        height: 280px;
+        width: 200px;
+        margin-left: -50px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .wrapper {
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr 4fr 4fr 0.6fr;
+        grid-template-areas:
+        "sidebar nav"
+        "sidebar content"
+        "sidebar content"
+        "footer  footer"
+    }
+    .main-nav ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .main-nav ul li {
+        margin-right: 2rem;
+    }
+
+    .music-card {
+        height: 200px;
+        width: 140px;
+        margin-left: -40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr 4fr 4fr 0.6fr;
+        grid-template-areas:
+        "sidebar nav"
+        "sidebar content"
+        "sidebar content"
+        "footer  footer"
+    }
+
+    .main-nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .music-card {
+        height: 160px;
+        width: 100px;
+        margin-left: -30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr 4fr 4fr 0.6fr;
+        grid-template-areas:
+        "sidebar nav"
+        "sidebar content"
+        "sidebar content"
+        "footer  footer"
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .music-card {
+        height: 160px;
+        width: 100px;
+        margin-left: -20px;
+    }
+}
