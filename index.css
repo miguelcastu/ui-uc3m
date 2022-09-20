@@ -5,14 +5,19 @@ html, body {
     margin: 0;
     height: 100%; 
     font-family: 'Montserrat', sans-serif;
-}
+    color: white;
+    background-color: #570EAA;
 
+}
+a{
+    color:white
+}
 .wrapper {
     height: 100%;
     width: 100%;
 
     display: grid;
-    gap: 20px;
+    gap: 0px;
     grid-template-areas:
         "nav"
         "content"
@@ -21,6 +26,7 @@ html, body {
 }
 
 .content {
+    margin-left: 10px;
     grid-area: content;
 }
 
@@ -28,6 +34,7 @@ html, body {
     grid-area: nav;
     position: sticky;
     top: 0;
+    background-color: #17141d;
 }
 
 .main-footer {
@@ -35,12 +42,8 @@ html, body {
     position: sticky;
     left: 0;
     bottom: 0;
-
     width: 100%;
-
-    background-color: red;
-    color: white;
-
+    background-color: #000000;
     text-align: center;
 }
 
@@ -48,25 +51,68 @@ html, body {
     grid-area: sidebar;
     position: sticky;
     top: 0;
+    background-color: #17141d;
+    height: 100%;
 }
 
 .sidebar-title {
     grid-area: sidebar-title;
     position: sticky;
     top: 0;
+    
 }
 
 .sidebar-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;   
+}
+
+.sidebar-list h5{
+        border: 3px solid #570EAA;
+        background-color: #570EAA;
+        border-radius: 4px;
+        text-align: center;
+        width: 80%
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 690px;
+}
+
+.sidebar-list img {
+    margin-right: auto;
+    margin-left: auto;
+    vertical-align: middle;
+    margin-top: -2px;
+    margin-right: 20px;
+    
 }
 
 .sidebar-list li {
     width: 100%;
 }
 
-ul {
+.sidebar-list ul {
+    overflow: hidden;
     list-style-type: none;
+}
+
+.main-sidebar ul li {
+    list-style-type: none;
+}
+
+.listItemA {
+    height: 40px;
+    width: 270px;
+    transition: .3s;
+    position: relative;
+    left: -70px;
+}
+
+.listItemA:hover {
+    left: 0;
 }
 
 .playlist .card-container {
@@ -87,7 +133,8 @@ ul {
     transition: 0.4s ease-out;
 
     position: relative;
-    left: 0px;
+    left: 20px;
+    top: 10px;
 }
 
 .music-card:hover {
@@ -97,7 +144,7 @@ ul {
   
 .music-card:hover ~ .music-card {
     position: relative;
-    left: 50px;
+    left: 80px;
     transition: 0.4s ease-out;
 }
 
@@ -106,10 +153,13 @@ ul {
     width: 100%;
 }
 
+.music-card p,h6{
+    white-space: initial;
+}
+
 .music-card audio {
     width: 100%;
     border-radius: 10px;
-
     position: absolute;
     bottom: 0;
     left: 0;
@@ -153,7 +203,7 @@ ul {
     .music-card {
         height: 280px;
         width: 200px;
-        margin-left: -50px;
+        
     }
 }
 
